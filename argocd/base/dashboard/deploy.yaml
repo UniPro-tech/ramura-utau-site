@@ -11,6 +11,18 @@ spec:
       labels:
         app: dashboard
     spec:
+      initContainers:
+        - name: init-dir
+          image: busybox
+          command:
+            [
+              "sh",
+              "-c",
+              "mkdir -p /app/public/files/ramura /app/public/files/gesshoku && chmod -R 777 /app/public/files",
+            ]
+          volumeMounts:
+            - name: zip
+              mountPath: /app/public/files
       containers:
         - name: app
           imagePullPolicy: Always
