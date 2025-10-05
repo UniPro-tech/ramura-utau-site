@@ -2,6 +2,7 @@ apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
   name: redirect-to-ramura
+  namespace: ramura-site
 spec:
   redirectRegex:
     regex: ^https?://arane.uniproject\.jp/(.*)
@@ -16,7 +17,7 @@ metadata:
     cert-manager.io/cluster-issuer: le-cf-staging
     traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
     traefik.ingress.kubernetes.io/router.tls: "true"
-    traefik.ingress.kubernetes.io/router.middlewares: redirect-to-ramura@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: ramura-site-redirect-to-ramura@kubernetescrd
 spec:
   ingressClassName: traefik
   rules:
