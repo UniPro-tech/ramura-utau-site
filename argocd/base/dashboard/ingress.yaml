@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: arane-dash.uniproject.jp
+    - host: ramura-dash.uniproject.jp
       http:
         paths:
           - path: /
@@ -21,5 +21,5 @@ spec:
                   number: 80
   tls:
     - hosts:
-        - arane-dash.uniproject.jp
-      secretName: arane-site-dashboard-tls
+        - ramura-dash.uniproject.jp
+      secretName: ramura-site-dashboard-tls
