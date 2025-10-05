@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: dashboard
 spec:
-  ipFamilyPolicy: PreferDualStack
   selector:
     app: dashboard
   ports:

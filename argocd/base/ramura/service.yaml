@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: ramura-site
 spec:
-  ipFamilyPolicy: RequireDualStack
   selector:
     app: ramura
   ports:
