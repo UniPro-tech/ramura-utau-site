@@ -1,9 +1,14 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - arane/*
-  - dashboard/*
-  - ramura/*
+  - arane/deployment.yaml
+  - arane/service.yaml
+  - dashboard/deploy.yaml
+  - dashboard/service.yaml
+  - dashboard/ingress.yaml
+  - dashboard/env.yaml
+  - ramura/deployment.yaml
+  - ramura/service.yaml
   - pv.yaml
   - ingress.yaml
 labels:
