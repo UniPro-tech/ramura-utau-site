@@ -20,7 +20,7 @@ spec:
           volumeMounts:
             - name: zip-pvc
               mountPath: /nextjs/public/assets
-              subPath: ramura
+              subPath: arane
       volumes:
         - name: zip-pvc
           persistentVolumeClaim:
