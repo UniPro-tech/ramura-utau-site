@@ -14,7 +14,7 @@ spec:
       containers:
         - name: app
           imagePullPolicy: Always
-          image: registry.uniproject.jp/ramura/ramura-site:1.0.0
+          image: registry.uniproject.jp/ramura/arane-site:1.0.0
           ports:
             - containerPort: 3000
           volumeMounts:
