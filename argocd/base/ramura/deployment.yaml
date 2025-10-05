@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ramura-site
+spec:
+  selector:
+    matchLabels:
+      app: ramura
+  template:
+    metadata:
+      labels:
+        app: ramura
+    spec:
+      containers:
+        - name: app
+          imagePullPolicy: Always
+          image: registry.uniproject.jp/ramura/ramura-site:1.0.0
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: zip-pvc
+              mountPath: /nextjs/public/assets
+      volumes:
+        - name: zip-pvc
+          persistentVolumeClaim:
+            claimName: zip
+      imagePullSecrets:
+        - name: internal-harbor

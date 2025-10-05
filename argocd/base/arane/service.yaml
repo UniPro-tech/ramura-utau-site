@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: arane-site
+spec:
+  ipFamilyPolicy: RequireDualStack
+  selector:
+    app: arane
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: ClusterIP

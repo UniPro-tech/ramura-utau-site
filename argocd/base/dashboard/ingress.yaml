@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dashboard
+  annotations:
+    cert-manager.io/cluster-issuer: le-cf-staging
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: arane-dash.uniproject.jp
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dashboard
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - arane-dash.uniproject.jp
+      secretName: arane-site-dashboard-tls

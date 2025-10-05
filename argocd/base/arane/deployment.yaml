@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arane-site
+spec:
+  selector:
+    matchLabels:
+      app: arane
+  template:
+    metadata:
+      labels:
+        app: arane
+    spec:
+      containers:
+        - name: app
+          imagePullPolicy: Always
+          image: registry.uniproject.jp/ramura/ramura-site:1.0.0
+          ports:
+            - containerPort: 3000
+      imagePullSecrets:
+        - name: internal-harbor

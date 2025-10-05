@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dashbord
+spec:
+  selector:
+    matchLabels:
+      app: dashboard
+  template:
+    metadata:
+      labels:
+        app: dashboard
+    spec:
+      containers:
+        - name: app
+          imagePullPolicy: Always
+          image: registry.uniproject.jp/ramura/utau-dashboard:1.0.0-alpha.7
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: zip
+              mountPath: /app/public/files
+          envFrom:
+            - secretRef:
+                name: dashboard
+      volumes:
+        - name: zip
+          persistentVolumeClaim:
+            claimName: zip-dash
+      imagePullSecrets:
+        - name: internal-harbor
