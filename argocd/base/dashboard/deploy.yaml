@@ -26,6 +26,6 @@ spec:
       volumes:
         - name: zip
           persistentVolumeClaim:
-            claimName: zip-dash
+            claimName: zip
       imagePullSecrets:
         - name: internal-harbor

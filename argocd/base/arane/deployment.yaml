@@ -17,5 +17,12 @@ spec:
           image: registry.uniproject.jp/ramura/ramura-site:1.0.0
           ports:
             - containerPort: 3000
+          volumeMounts:
+            - name: zip-pvc
+              mountPath: /nextjs/public/assets
+      volumes:
+        - name: zip-pvc
+          persistentVolumeClaim:
+            claimName: zip
       imagePullSecrets:
         - name: internal-harbor
