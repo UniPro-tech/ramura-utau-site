@@ -12,7 +12,3 @@ resources:
   - pv.yaml
   - ingress.yaml
   - registry.yaml
-labels:
-  - includeSelectors: true
-    pairs:
-      app: arane-dashboard
