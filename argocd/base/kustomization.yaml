@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - arane/*
   - dashboard/*
+  - ramura/*
   - pv.yaml
   - ingress.yaml
 labels:
