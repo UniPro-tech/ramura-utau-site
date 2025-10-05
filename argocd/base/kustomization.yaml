@@ -11,6 +11,7 @@ resources:
   - ramura/service.yaml
   - pv.yaml
   - ingress.yaml
+  - registry.yaml
 labels:
   - includeSelectors: true
     pairs:
