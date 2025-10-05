@@ -4,8 +4,6 @@ metadata:
   name: dashboard
   annotations:
     cert-manager.io/cluster-issuer: le-cf-staging
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
 spec:
   ingressClassName: traefik
   rules:
