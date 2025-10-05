@@ -22,6 +22,15 @@ spec:
   ingressClassName: traefik
   rules:
     - host: arane.uniproject.jp
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: arane-site
+                port:
+                  number: 80
     - host: ramura.uniproject.jp
       http:
         paths:
