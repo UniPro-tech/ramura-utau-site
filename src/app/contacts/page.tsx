@@ -9,8 +9,8 @@ export const metadata = {
 
 export default function ContactsPage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="font-sans grid items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+      <main className="flex flex-col gap-[32px] row-start-2 items-start sm:items-start">
         <section>
           <h1 className="text-4xl font-bold">Contacts</h1>
           <p>お問い合わせはこちらからお願いします。</p>
