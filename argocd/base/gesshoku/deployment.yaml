@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gesshoku-site
+spec:
+  selector:
+    matchLabels:
+      app: gesshoku
+  template:
+    metadata:
+      labels:
+        app: gesshoku
+    spec:
+      containers:
+        - name: app
+          imagePullPolicy: Always
+          image: registry.uniproject.jp/ramura/gesshoku-site:0.1.0
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: zip-pvc
+              mountPath: /nextjs/public/assets
+              subPath: gesshoku
+      volumes:
+        - name: zip-pvc
+          persistentVolumeClaim:
+            claimName: zip
+      imagePullSecrets:
+        - name: internal-harbor

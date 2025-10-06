@@ -48,13 +48,13 @@ spec:
                 name: arane-site
                 port:
                   number: 80
-          #- path: /gessshoku
-          #  pathType: Prefix
-          #  backend:
-          #    service:
-          #      name: gesshoku-site
-          #      port:
-          #        number: 80
+          - path: /gesshoku
+            pathType: Prefix
+            backend:
+              service:
+                name: gesshoku-site
+                port:
+                  number: 80
   tls:
     - hosts:
         - ramura.uniproject.jp
