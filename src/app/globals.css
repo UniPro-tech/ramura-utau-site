@@ -27,7 +27,7 @@ body {
 
 /* Markdown Styles */
 .markdown {
-  @apply text-gray-900 leading-relaxed break-words w-full;
+  @apply text-gray-900 dark:text-neutral-50 leading-relaxed break-words w-full;
 }
 
 .markdown > * + * {
@@ -43,7 +43,7 @@ body {
 }
 
 .markdown strong {
-  @apply font-bold text-gray-900;
+  @apply font-bold text-gray-900 dark:text-neutral-50;
 }
 
 .markdown a {
@@ -55,55 +55,55 @@ body {
 }
 
 .markdown h1 {
-  @apply text-4xl font-bold text-gray-900 mb-6 mt-8 pb-2 border-b border-gray-200;
+  @apply text-4xl font-bold text-gray-900 mb-6 mt-8 pb-2 border-b border-gray-200 dark:text-neutral-50;
 }
 
 .markdown h2 {
-  @apply text-2xl font-bold text-gray-900 mb-6 mt-10 pl-4 border-l-[3px] border-blue-500;
+  @apply text-2xl font-bold text-gray-900 mb-6 mt-10 pl-4 border-l-[3px] border-blue-500 dark:text-neutral-50;
 }
 
 .markdown h3 {
-  @apply text-xl font-semibold text-gray-800 mb-4 mt-6 border-l-4 border-gray-300 pl-3;
+  @apply text-xl font-semibold text-gray-800 mb-4 mt-6 border-l-4 border-gray-300 pl-3 dark:text-neutral-50;
 }
 
 .markdown h4 {
-  @apply text-lg font-semibold text-gray-800 mb-4 mt-6 border-b border-gray-200 pb-1;
+  @apply text-lg font-semibold text-gray-800 mb-4 mt-6 border-b border-gray-200 pb-1 dark:text-neutral-50;
 }
 
 .markdown h5 {
-  @apply text-base font-semibold text-gray-700 mb-4 mt-6;
+  @apply text-base font-semibold text-gray-700 mb-4 mt-6 dark:text-neutral-50;
 }
 
 .markdown h6 {
-  @apply text-sm font-semibold text-gray-600 mb-4 mt-6;
+  @apply text-sm font-semibold text-gray-600 mb-4 mt-6 dark:text-neutral-50;
 }
 
 .markdown blockquote {
-  @apply pl-6 pr-4 py-1 my-6 border-l-4 border-blue-400 bg-blue-50/50 text-gray-700 rounded-r-lg;
+  @apply pl-6 pr-4 py-1 my-6 border-l-4 border-blue-400 bg-blue-50/50 text-gray-700 rounded-r-lg dark:text-neutral-50;
 }
 
 .markdown code {
-  @apply font-mono text-sm px-1.5 py-0.5 bg-gray-100 text-gray-900 rounded;
+  @apply font-mono text-sm px-1.5 py-0.5 bg-gray-100 text-gray-900 rounded dark:text-neutral-50;
 }
 
 .markdown pre {
-  @apply bg-gray-900 rounded-lg p-4 mb-6 overflow-x-auto;
+  @apply bg-gray-900 rounded-lg p-4 mb-6 overflow-x-auto dark:text-neutral-50;
 }
 
 .markdown pre code {
-  @apply block bg-transparent p-0 overflow-visible rounded-none text-gray-300 text-sm leading-6;
+  @apply block bg-transparent p-0 overflow-visible rounded-none text-gray-300 text-sm leading-6 dark:text-neutral-50;
 }
 
 .markdown ul {
-  @apply list-disc pl-6 mb-6 space-y-2 text-gray-700;
+  @apply list-disc pl-6 mb-6 space-y-2 text-gray-700 dark:text-neutral-50;
 }
 
 .markdown ol {
-  @apply list-decimal pl-6 mb-6 space-y-2 text-gray-700;
+  @apply list-decimal pl-6 mb-6 space-y-2 text-gray-700 dark:text-neutral-50;
 }
 
 .markdown kbd {
-  @apply px-2 py-1 text-xs font-mono bg-gray-100 border border-gray-300 rounded shadow-sm;
+  @apply px-2 py-1 text-xs font-mono bg-gray-100 border border-gray-300 rounded shadow-sm dark:text-neutral-50;
 }
 
 .markdown table {
@@ -126,7 +126,7 @@ body {
 /* @apply does not accept `!important`. Apply the utility then override the
    background with an explicit value if you need to force it. */
 .markdown .highlight pre {
-  @apply bg-gray-900;
+  @apply bg-gray-900 dark:text-neutral-50;
   background-color: #111827 !important;
 }
 
