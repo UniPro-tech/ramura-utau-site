@@ -11,6 +11,25 @@ spec:
       labels:
         app: gesshoku
     spec:
+      initContainers:
+        - name: init-myservice
+          image: busybox
+          command:
+            [
+              "sh",
+              "-c",
+              "if [ ! -d /nextjs/data/files ]; then mkdir -p /nextjs/data/files && echo 'Directory created'; else echo 'Directory already exists'; fi",
+              "&&",
+              "if [ ! -d /nextjs/data/settings ]; then mkdir -p /nextjs/data/settings && echo 'Directory created'; else echo 'Directory already exists'; fi",
+              "&&",
+              "if [ ! -f /nextjs/data/settings/files.json ]; then echo '{}' > /nextjs/data/settings/files.json && echo 'File created'; else echo 'File already exists'; fi",
+              "&&",
+              "if [ ! -f /nextjs/data/settings/videos.json ]; then echo '{}' > /nextjs/data/settings/videos.json && echo 'File created'; else echo 'File already exists'; fi",
+            ]
+          volumeMounts:
+            - name: zip-pvc
+              mountPath: /nextjs/data
+              subPath: gesshoku
       containers:
         - name: app
           imagePullPolicy: Always
@@ -19,7 +38,7 @@ spec:
             - containerPort: 3000
           volumeMounts:
             - name: zip-pvc
-              mountPath: /nextjs/public/assets
+              mountPath: /nextjs/data
               subPath: gesshoku
       volumes:
         - name: zip-pvc
