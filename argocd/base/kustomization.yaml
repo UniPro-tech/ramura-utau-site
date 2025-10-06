@@ -3,6 +3,8 @@ kind: Kustomization
 resources:
   - arane/deployment.yaml
   - arane/service.yaml
+  - gesshoku/deployment.yaml
+  - gesshoku/service.yaml
   - dashboard/deploy.yaml
   - dashboard/service.yaml
   - dashboard/ingress.yaml
