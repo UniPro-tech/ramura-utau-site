@@ -5,7 +5,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: le-cf-staging
 spec:
-  ingressClassName: traefik
+  ingressClassName: nginx
   rules:
     - host: ramura-dash.uniproject.jp
       http:
