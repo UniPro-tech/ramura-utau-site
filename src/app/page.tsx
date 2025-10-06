@@ -1,5 +1,4 @@
 import Footer from "@/components/Footer";
-import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {

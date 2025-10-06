@@ -1,6 +1,12 @@
 import Footer from "@/components/Footer";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Contacts - らむらのサイトへようこそ",
+  description:
+    "お問い合わせページです。サイトへのお問い合わせや音源に関するお問い合わせはこちらからお願いします。",
+};
+
 export default function ContactsPage() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">

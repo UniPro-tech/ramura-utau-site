@@ -1,8 +1,13 @@
 import fs from "fs";
 import { MarkdownAsync } from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Link from "next/link";
 import Footer from "@/components/Footer";
+
+export const metadata = {
+  title: "ライセンス - らむらのサイトへようこそ",
+  description:
+    "らむらの配布するUTAU音源および画像等のライセンスについて記載しております。ご利用の際はこちらのページをご一読の上、ご利用ください。",
+};
 
 export const dynamic = "force-static";
 
