@@ -14,3 +14,4 @@ resources:
   - pv.yaml
   - ingress.yaml
   - registry.yaml
+  - imageUpdater.yaml
