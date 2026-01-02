@@ -1,0 +1,26 @@
+apiVersion: argocd-image-updater.argoproj.io/v1alpha1
+kind: ImageUpdater
+metadata:
+  name: ramura-utau-site
+  namespace: argocd
+spec:
+  namespace: argocd
+  applicationRefs:
+    - namePattern: "ramura-utau-site"
+      images:
+        - alias: "utau-site"
+          imageName: "registry.uniproject.jp/ramura/utau-site"
+          commonUpdateSettings:
+            updateStrategy: "semver"
+        - alias: "dashboard"
+          imageName: "registry.uniproject.jp/ramura/utau-dashboard:x.x.x-x"
+          commonUpdateSettings:
+            updateStrategy: "semver"
+        - alias: "arane-site"
+          imageName: "registry.uniproject.jp/ramura/arane-site"
+          commonUpdateSettings:
+            updateStrategy: "semver"
+        - alias: "gesshoku-site"
+          imageName: "registry.uniproject.jp/ramura/gesshoku-site"
+          commonUpdateSettings:
+            updateStrategy: "semver"
