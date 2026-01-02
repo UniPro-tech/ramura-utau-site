@@ -8,6 +8,11 @@ concurrency:
   group: docker-build-push
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -36,9 +41,10 @@ jobs:
           tags: |
             type=raw,value=latest
             type=semver,pattern={{version}}
-            type=sha,prefix=,suffix=,format=short
+            type=sha,prefix=sha-,suffix=,format=short
 
       - name: Push Docker image
+        id: build-and-push
         uses: docker/build-push-action@v5
         with:
           file: ./Dockerfile
@@ -48,3 +54,16 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=registry,ref=registry.uniproject.jp/ramura/utau-site:buildcache
           cache-to: type=registry,ref=registry.uniproject.jp/ramura/utau-site:buildcache,mode=max
+
+      - name: Sign Docker images with GitHub OIDC (cosign keyless)
+        env:
+          TAGS: ${{ steps.meta.outputs.tags }}
+          DIGEST: ${{ steps.build-and-push.outputs.digest }}
+          COSIGN_EXPERIMENTAL: "true"
+        run: |
+          images=""
+          for tag in ${TAGS}; do
+            images="${images}${tag}@${DIGEST} "
+          done
+
+          cosign sign --yes ${images}
