@@ -34,6 +34,10 @@ spec:
                 /nextjs/data/settings/videos.json && echo 'File created'; else
                 echo 'File already exists'; fi",
             ]
+          volumeMounts:
+            - name: zip-pvc
+              mountPath: /nextjs/data
+              subPath: gesshoku
       containers:
         - name: app
           imagePullPolicy: Always
