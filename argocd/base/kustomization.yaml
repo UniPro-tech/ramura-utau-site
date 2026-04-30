@@ -7,7 +7,6 @@ resources:
   - gesshoku/service.yaml
   - dashboard/deploy.yaml
   - dashboard/service.yaml
-  - dashboard/ingress.yaml
   - dashboard/env.yaml
   - ramura/deployment.yaml
   - ramura/service.yaml

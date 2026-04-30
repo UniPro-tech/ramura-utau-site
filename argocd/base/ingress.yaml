@@ -9,6 +9,14 @@ spec:
     replacement: https://ramura.uniproject.jp/arane/${1}
     permanent: true
 ---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: dashboard-no-limit
+  namespace: ramura-site
+spec:
+  buffering: {}
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -60,3 +68,30 @@ spec:
         - ramura.uniproject.jp
         - arane.uniproject.jp
       secretName: arane-site-tls
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ramura-site-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: le-cf-staging
+    traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.middlewares: ramura-site-dashboard-no-limit@kubernetescrd
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: ramura-dash.uniproject.jp
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dashboard
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - ramura-dash.uniproject.jp
+      secretName: ramura-dash-tls
