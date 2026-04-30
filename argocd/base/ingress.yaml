@@ -72,14 +72,12 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ramura-dash-ingress
+  name: dashboard
   annotations:
     cert-manager.io/cluster-issuer: le-cf-staging
-    traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
-    traefik.ingress.kubernetes.io/router.tls: "true"
-    traefik.ingress.kubernetes.io/router.middlewares: ramura-site-dashboard-no-limit@kubernetescrd
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
 spec:
-  ingressClassName: traefik
+  ingressClassName: nginx
   rules:
     - host: ramura-dash.uniproject.jp
       http:
@@ -94,4 +92,5 @@ spec:
   tls:
     - hosts:
         - ramura-dash.uniproject.jp
-      secretName: ramura-dash-tls
+      secretName: ramura-site-dashboard-tls
+
