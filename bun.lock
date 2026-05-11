@@ -5,23 +5,23 @@
     "": {
       "name": "ramura-utau-site",
       "dependencies": {
-        "next": "^16.1.1",
-        "react": "^19.2.3",
-        "react-dom": "^19.2.3",
-        "react-icons": "^5.5.0",
+        "next": "^16.2.6",
+        "react": "^19.2.6",
+        "react-dom": "^19.2.6",
+        "react-icons": "^5.6.0",
         "react-markdown": "^10.1.0",
         "remark-gfm": "^4.0.1",
       },
       "devDependencies": {
-        "@eslint/eslintrc": "^3.3.3",
-        "@tailwindcss/postcss": "^4.1.18",
-        "@types/node": "^25.0.6",
-        "@types/react": "^19.2.8",
+        "@eslint/eslintrc": "^3.3.5",
+        "@tailwindcss/postcss": "^4.3.0",
+        "@types/node": "^25.6.2",
+        "@types/react": "^19.2.14",
         "@types/react-dom": "^19.2.3",
-        "eslint": "^9.39.2",
-        "eslint-config-next": "^16.1.1",
-        "tailwindcss": "^4.1.18",
-        "typescript": "^5.9.3",
+        "eslint": "^9.39.4",
+        "eslint-config-next": "^16.2.6",
+        "tailwindcss": "^4.3.0",
+        "typescript": "^6.0.0",
       },
     },
   },
@@ -984,7 +984,7 @@
 
     "typed-array-length": ["typed-array-length@1.0.7", "https://npm.flatt.tech/typed-array-length/-/typed-array-length-1.0.7.tgz", { "dependencies": { "call-bind": "^1.0.7", "for-each": "^0.3.3", "gopd": "^1.0.1", "is-typed-array": "^1.1.13", "possible-typed-array-names": "^1.0.0", "reflect.getprototypeof": "^1.0.6" } }, "sha512-3KS2b+kL7fsuk/eJZ7EQdnEmQoaho/r6KUef7hxvltNA5DR8NAUM+8wJMbJyZ4G9/7i3v5zPBIMN5aybAh2/Jg=="],
 
-    "typescript": ["typescript@5.9.3", "https://npm.flatt.tech/typescript/-/typescript-5.9.3.tgz", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
+    "typescript": ["typescript@6.0.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw=="],
 
     "typescript-eslint": ["typescript-eslint@8.52.0", "https://npm.flatt.tech/typescript-eslint/-/typescript-eslint-8.52.0.tgz", { "dependencies": { "@typescript-eslint/eslint-plugin": "8.52.0", "@typescript-eslint/parser": "8.52.0", "@typescript-eslint/typescript-estree": "8.52.0", "@typescript-eslint/utils": "8.52.0" }, "peerDependencies": { "eslint": "^8.57.0 || ^9.0.0", "typescript": ">=4.8.4 <6.0.0" } }, "sha512-atlQQJ2YkO4pfTVQmQ+wvYQwexPDOIgo+RaVcD7gHgzy/IQA+XTyuxNM9M9TVXvttkF7koBHmcwisKdOAf2EcA=="],
 
