@@ -16,6 +16,6 @@ spec:
           imagePullPolicy: Always
           image: registry.uniproject.jp/ramura/utau-site:1.0.0
           ports:
-            - containerPort: 3000
+            - containerPort: 8080
       imagePullSecrets:
         - name: internal-harbor
