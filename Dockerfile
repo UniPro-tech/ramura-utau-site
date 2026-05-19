@@ -1,22 +1,14 @@
-FROM node:24-slim
-
-RUN apt-get update && apt-get install -y \
-  zip \
-  unzip \
-  curl
-
-RUN curl -fsSL https://bun.sh/install | bash
-
-ENV PATH="/root/.bun/bin:$PATH"
-
+# 1. ビルドステージ
+FROM oven/bun:1.3 AS builder
 WORKDIR /app
-
-COPY . .
-
+COPY package.json ./
+COPY bun.lock* ./
 RUN bun install --frozen-lockfile
+COPY . .
+RUN bun run build
 
-RUN npm run build
-
-EXPOSE 3000
-
-CMD ["bun", "start"]
+# 2. 配信ステージ
+FROM nginx:alpine
+COPY --from=builder /app/out /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
