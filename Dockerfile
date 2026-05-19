@@ -1,3 +1,5 @@
+ARG NGINXINC_IMAGE_TAG=alpine3.22
+
 # 1. ビルドステージ
 FROM oven/bun:1.3 AS builder
 WORKDIR /app
