@@ -4,7 +4,6 @@ metadata:
   name: ramura-utau-site
   namespace: argocd
 spec:
-  namespace: argocd
   applicationRefs:
     - namePattern: "ramura-utau-site"
       images:
